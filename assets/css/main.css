@@ -76,31 +76,10 @@ input, select, textarea {
 
 /* Pridani */
 @media screen and (max-width: 736px) {
-  #banner h2 {
-    font-size: 1.5em;
-    line-height: 1.4em;
-    margin-bottom: 0.5em;
-  }
-
-  #banner p {
-    font-size: 1em;
-    line-height: 1em;
-    margin-top: 0.5em;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  body, input, select, textarea {
-    font-size: 7px;
-    line-height: 1em;
-    letter-spacing: normal;
-  }
-
-  p {
-    font-size: 7px;
+  #banner p,
+  #one p {
+    font-size: 1px;
     line-height: 1.5em;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
   }
 }
 

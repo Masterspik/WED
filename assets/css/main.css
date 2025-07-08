@@ -74,6 +74,20 @@ input, select, textarea {
 	appearance: none;
 }
 
+@media screen and (max-width: 736px) {
+  #banner h2 {
+    font-size: 1.5em;
+    line-height: 1.4em;
+    margin-bottom: 0.5em;
+  }
+
+  #banner p {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+  }
+}
+
 /* Basic */
 
 	@-ms-viewport {

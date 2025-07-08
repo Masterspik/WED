@@ -166,7 +166,7 @@ input, select, textarea {
 	}
 
 /*
-Písmo v nadpisech
+PÃ­smo v nadpisech
 */
  
 	h1, h2, h3, h4, h5, h6 {
@@ -3973,6 +3973,16 @@ Písmo v nadpisech
 
 		}
 
+@media screen and (max-width: 736px) {
+  .spotlight {
+    flex-direction: column;
+  }
+
+  .spotlight .image,
+  .spotlight .content {
+    width: 100%;
+  }
+}
 /* Landing */
 
 	body.landing #page-wrapper {

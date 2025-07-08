@@ -2204,8 +2204,9 @@ Písmo v nadpisech
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			width: 100%;
-			margin-left: 0;
+     			 display: flex;
+      			justify-content: center;
+     			 margin-top: 1em;
 		}
 
 			ul.actions.special li:first-child {

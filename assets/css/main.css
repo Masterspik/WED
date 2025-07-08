@@ -75,7 +75,7 @@ input, select, textarea {
 }
 
 /* Pridani */
-@media screen and (max-width: 736px) {
+@media screen and (max-width: 1000px) {
   #banner p,
   #one p {
     font-size: 1px;

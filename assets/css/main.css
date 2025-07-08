@@ -74,6 +74,7 @@ input, select, textarea {
 	appearance: none;
 }
 
+/* Pridani */
 @media screen and (max-width: 736px) {
   #banner h2 {
     font-size: 1.5em;
@@ -85,6 +86,21 @@ input, select, textarea {
     font-size: 1em;
     line-height: 1.5em;
     margin-top: 0.5em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body, input, select, textarea {
+    font-size: 14px;
+    line-height: 1.5em;
+    letter-spacing: normal;
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 1.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
   }
 }
 

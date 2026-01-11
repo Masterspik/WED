@@ -79,6 +79,7 @@ input, select, textarea {
 
 @media screen and (max-width: 960px) {
   #banner p,
+  #banner p { font-size: 1.125rem; }   /* ≈ 18px */
   #one p {
     font-size: 1rem;     /* ≈ 16px */
     line-height: 1.5em;
@@ -175,7 +176,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-    font-size: 25pt;
+    font-size: 1rem;
 	}
 
 /*

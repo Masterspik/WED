@@ -176,7 +176,7 @@ input, select, textarea {
 
 	p {
 		margin: 0 0 2em 0;
-    font-size: 1rem;
+    font-size: 1.4rem;
 	}
 
 /*
@@ -2666,14 +2666,14 @@ Písmo v nadpisech
 			}
 
 		@media screen and (max-width: 736px) {
-
-  .features li {
-    padding: 3em 1.5em 1em 1.5em;
-    background-color: inherit;   /* ✅ nechá platit nth-child barvy */
-    border-top: 0;               /* volitelně pryč linky */
-    width: 100%;
-  }
-
+.features li {
+  padding: 2.25em 1.25em 1.25em 1.25em;
+  background-color: inherit !important; /* ✅ nechá nth-child barvy */
+  border-top: 0;                        /* ✅ pryč “slepení” */
+  width: 100%;
+  margin: 0 0 1em 0;                    /* ✅ každé okno zvlášť */
+  border-radius: 0.75em;                /* ✅ karta */
+}
 					.features li:first-child {
 						border-top: 0;
 					}
@@ -3156,16 +3156,6 @@ Písmo v nadpisech
 				.wrapper.style3 .button:active {
 					background-color: rgba(255, 255, 255, 0.2);
 				}
-
-			@media screen and (max-width: 736px) {
-
-				.wrapper.style3 .features li {
-	          background-color: #ffffff;
-	          color: #516066;
-	          border-radius: 0.75em;
-          }
-
-			}
 
 		.wrapper.style4 {
 			background-color: transparent;

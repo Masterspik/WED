@@ -118,7 +118,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-	   font-family: "Bellefair", serif;
+	   font-family: 'Libre Baskerville', serif;
 	   font-size: 20pt;
 	   font-weight: 400;
 	   letter-spacing: 0.075em;
@@ -185,7 +185,7 @@ Písmo v nadpisech
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
 		font-weight: 800;
-		letter-spacing: 0.225em;
+		letter-spacing: 0.02em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
 		text-transform: none;
@@ -3006,8 +3006,8 @@ Písmo v nadpisech
     }
     
 		.wrapper.style3 {
-			background-color: #505393;
-			color: #d3d4e4;
+			background-color: #f6f2ea;
+			color: #1f2a2e;
 		}
 
 			.wrapper.style3 strong, .wrapper.style3 b {
@@ -3015,7 +3015,7 @@ Písmo v nadpisech
 			}
 
 			.wrapper.style3 h2, .wrapper.style3 h3, .wrapper.style3 h4, .wrapper.style3 h5, .wrapper.style3 h6 {
-				color: #ffffff;
+				color: #1f2a2e;
 			}
 
 			.wrapper.style3 hr {
@@ -3159,8 +3159,10 @@ Písmo v nadpisech
 			@media screen and (max-width: 736px) {
 
 				.wrapper.style3 .features li {
-					border-top-color: rgba(0, 0, 0, 0.125);
-				}
+	          background-color: #ffffff;
+	          color: #516066;
+	          border-radius: 0.75em;
+          }
 
 			}
 

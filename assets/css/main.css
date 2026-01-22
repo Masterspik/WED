@@ -2728,15 +2728,15 @@ Písmo v nadpisech
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: rgba(0, 0, 0, 0.075);
+			background-color: rgba(0, 0, 0, 0.4);
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.15);
+			background-color: rgba(0, 0, 0, 0.475);
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.225);
+			background-color: rgba(0, 0, 0, 0.6);
 		}
 
 		.spotlight:nth-child(4) {
@@ -4032,10 +4032,6 @@ Písmo v nadpisech
   
 /* Místo – mapa: desktop */
 
-#two .spotlight {
-  background-color: #ADB8AA;      /* stejná barva jako wrapper.style2 */
-}
-
 #two .spotlight .place-map {
   flex: 0 0 45%;
   max-width: 45%;
@@ -4099,5 +4095,41 @@ Písmo v nadpisech
   #two p {
     font-size: 1rem;
     margin-bottom: 1.2em;
+  }
+} 
+
+/* === MOBILE FIX pro sekci Místo (#two) === */
+@media screen and (max-width: 736px) {
+
+  /* celý blok Místo+mapa – bez zbytečného vnitřního odsazení */
+  #two .spotlight {
+    padding: 0;
+  }
+
+  /* mapa – plná šířka, menší výška, malý rozestup dolů */
+  #two .spotlight .place-map {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin: 0 0 1rem 0;
+    height: 230px;           /* klidně si doladíš (200–260 px) */
+  }
+
+  /* text „Místo, adresa, parkování“ – menší padding, menší mezera nad H2 */
+  #two .spotlight .content {
+    padding: 1.5em 1.5em 2em 1.5em;
+    text-align: center;      /* nebo left, když chceš zarovnání vlevo */
+  }
+
+  /* menší písmo u textů v Místo, ať to není tak obří */
+  #two p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.2em;
+  }
+
+  /* menší nadpis Místo, aby nevyplnil půl obrazovky */
+  #two h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
   }
 }

@@ -4072,8 +4072,14 @@ Písmo v nadpisech
     height: 260px;
   }
 
+    /* text pod mapou – menší padding a lepší čitelnost + vystředění bloku */
   #two .spotlight .content {
-    padding: 1.75em 1.5em 2em 1.5em;
+    padding: 1.5em 1.5em 2em 1.5em;
+    text-align: center;
+    line-height: 1.6;
+
+    max-width: 90%;         /* užší textový blok na mobilu */
+    margin: 1.5em auto 2em; /* auto = vodorovné vystředění */
   }
 }
 

@@ -4030,19 +4030,13 @@ Písmo v nadpisech
 		background-color: #1d242a;
 	}
   
-/* === Místo – mapa (zúžení a odsazení od okraje) === */
-
-/* Desktop */
-#two .spotlight {
-  display: flex;
-  align-items: center;
-}
+/* Místo – mapa: decentní úprava, aby byla menší */
 
 #two .spotlight .place-map {
-  flex: 0 0 30%;          /* ✅ mapa má jen 50 % šířky */
-  max-width: 30%;
-  margin-left: 20rem;     /* ✅ odsazení od levého okraje */
-  height: 420px;         /* rozumná výška */
+  flex: 0 0 45%;
+  max-width: 45%;
+  margin-left: 3rem;
+  height: 360px;
 }
 
 #two .spotlight .place-map iframe {
@@ -4051,17 +4045,29 @@ Písmo v nadpisech
   border: 0;
 }
 
-/* Mobil */
-@media screen and (max-width: 980px) {
-  #two .spotlight {
-    flex-direction: column;
-  }
+/* Mobil: mapa pod sebou, plná šířka, menší výška */
+@media screen and (max-width: 736px) {
 
   #two .spotlight .place-map {
     max-width: 100%;
-    flex: 0 0 100%;
-    margin: 0 0 2rem 0;   /* pod mapou mezera */
-    height: 320px;
+    flex: 0 0 auto;
+    margin: 0;
+    height: 230px;
+  }
+
+  #two .spotlight .content {
+    padding: 1.75em 1.5em 2em 1.5em;
+    text-align: center;
+  }
+
+  #two p {
+    font-size: 1rem;
+    margin-bottom: 1.25em;
+  }
+
+  #two h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
   }
 }
 
@@ -4099,4 +4105,13 @@ Písmo v nadpisech
     font-size: 1.1em;
     margin-bottom: 0.8em;
   }
+}
+
+
+/* === Zarovnání textu v sekci Místo na střed === */
+
+#two .spotlight .content {
+  text-align: center;
+  max-width: 980px;
+  margin: 0 auto;
 }

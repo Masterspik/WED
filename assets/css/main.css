@@ -4064,3 +4064,39 @@ Písmo v nadpisech
     height: 320px;
   }
 }
+
+/* === Mobile fix: sekce Místo (#two) === */
+@media screen and (max-width: 736px) {
+
+  /* celé Místo + mapa – stejné pozadí, žádný „mrtvý“ pás */
+  #two .spotlight {
+    background-color: #98a492;   /* nebo tvoje zelenošedá */
+    padding: 0;
+  }
+
+  /* mapa – přes celou šířku, menší výška, bez bočních odsazení */
+  #two .spotlight .place-map {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin: 0;
+    height: 230px;               /* klidně si uprav */
+  }
+
+  /* text pod mapou – menší padding a lepší čitelnost */
+  #two .spotlight .content {
+    padding: 1.5em 1.5em 2em 1.5em;
+    text-align: center;          /* nebo left, pokud chceš zarovnání doleva */
+    line-height: 1.6;
+  }
+
+  /* texty v téhle sekci o kousek menší, ať nejsou „křičící“ */
+  #two p {
+    font-size: 1rem;
+    margin-bottom: 1.25em;
+  }
+
+  #two h2 {
+    font-size: 1.1em;
+    margin-bottom: 0.8em;
+  }
+}

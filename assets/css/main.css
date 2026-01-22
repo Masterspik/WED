@@ -4029,13 +4029,20 @@ Písmo v nadpisech
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
-  
-/* Místo – mapa: desktop */
+
+  /* === Sekce Místo (#two) – mapa + text === */
+
+/* Desktop / větší obrazovky */
+#two .spotlight {
+  display: flex;
+  align-items: stretch;
+  padding: 0;
+}
 
 #two .spotlight .place-map {
   flex: 0 0 45%;
   max-width: 45%;
-  margin-left: 3rem;
+  margin: 0 0 0 3rem;
   height: 360px;
 }
 
@@ -4045,46 +4052,44 @@ Písmo v nadpisech
   border: 0;
 }
 
-/* text v sekci Místo zarovnaný na střed */
 #two .spotlight .content {
+  flex: 1;
+  padding: 3em 3em 3em 3em;
   text-align: center;
-  max-width: 980px;
+  max-width: 48em;
   margin: 0 auto;
 }
 
-/* Tablet + mobil (do 980px) – mapa nahoře, text pod ní */
-
+/* Tablet a menší (≤ 980px) – mapa nahoře, text pod ní */
 @media screen and (max-width: 980px) {
-
   #two .spotlight {
     display: block;
     padding: 0;
   }
 
   #two .spotlight .place-map {
-    max-width: 100%;
     flex: none;
+    max-width: 100%;
     margin: 0;
     height: 260px;
   }
 
-    /* text pod mapou – menší padding a lepší čitelnost + vystředění bloku */
   #two .spotlight .content {
-    padding: 1.5em 1.5em 2em 1.5em;
+    padding: 2em 1.5em 2.5em 1.5em;
     text-align: center;
-    line-height: 1.6;
-
-    max-width: 90%;         /* užší textový blok na mobilu */
-    margin: 1.5em auto 2em; /* auto = vodorovné vystředění */
+    max-width: 90%;
+    margin: 1.5em auto 2em;
   }
 }
 
-/* Menší mobily (do 736px) – jen jemné doladění textu */
-
+/* Telefony (≤ 736px) – menší výška mapy a textu */
 @media screen and (max-width: 736px) {
-
   #two .spotlight .place-map {
     height: 220px;
+  }
+
+  #two .spotlight .content {
+    padding: 1.8em 1.25em 2em 1.25em;
   }
 
   #two h2 {
@@ -4094,42 +4099,7 @@ Písmo v nadpisech
 
   #two p {
     font-size: 1rem;
-    margin-bottom: 1.2em;
-  }
-} 
-
-/* === MOBILE FIX pro sekci Místo (#two) === */
-@media screen and (max-width: 736px) {
-
-  /* celý blok Místo+mapa – bez zbytečného vnitřního odsazení */
-  #two .spotlight {
-    padding: 0;
-  }
-
-  /* mapa – plná šířka, menší výška, malý rozestup dolů */
-  #two .spotlight .place-map {
-    max-width: 100%;
-    flex: 0 0 100%;
-    margin: 0 0 1rem 0;
-    height: 230px;           /* klidně si doladíš (200–260 px) */
-  }
-
-  /* text „Místo, adresa, parkování“ – menší padding, menší mezera nad H2 */
-  #two .spotlight .content {
-    padding: 1.5em 1.5em 2em 1.5em;
-    text-align: center;      /* nebo left, když chceš zarovnání vlevo */
-  }
-
-  /* menší písmo u textů v Místo, ať to není tak obří */
-  #two p {
-    font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.2em;
-  }
-
-  /* menší nadpis Místo, aby nevyplnil půl obrazovky */
-  #two h2 {
-    font-size: 1.1em;
-    margin-bottom: 0.8em;
+    margin-bottom: 1.1em;
   }
 }

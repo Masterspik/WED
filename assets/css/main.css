@@ -4213,3 +4213,95 @@ Písmo v nadpisech
     margin-bottom: 1.2em;
   }
 }
+
+/* ===== Místo – desktop equal-height ===== */
+
+.spotlight.equal-height {
+  align-items: stretch;             /* oba sloupce stejně vysoké */
+}
+
+.spotlight.equal-height .image.place-map,
+.spotlight.equal-height .content {
+  flex: 1 1 50%;                    /* oba mají polovinu šířky */
+}
+
+.spotlight.equal-height .image.place-map {
+  display: flex;                    /* umožní centrovat obsah */
+}
+
+.spotlight.equal-height .image.place-map iframe {
+  width: 100%;
+  height: 100%;                     /* mapa vyplní celou výšku boxu */
+}
+
+/* ===========================
+   MOBILE FIXES (<= 736px)
+   =========================== */
+@media screen and (max-width: 736px) {
+
+  /* 1) Spotlight content: využít šířku displeje */
+  #two .spotlight .content {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+    max-width: none !important;
+    width: 100% !important;
+    text-align: center;
+  }
+
+  /* 2+3) Nadpisy s čarami: vždy na 1 řádek + vycentrovat */
+  /* Funguje pro "Místo", "Příjezd" a obecně všechny h2 v #two */
+  #two .spotlight .content h2 {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    white-space: nowrap;      /* nezalomí text nadpisu */
+    width: 100%;
+    margin: 0 0 1.2rem 0;
+  }
+
+  #two .spotlight .content h2::before,
+  #two .spotlight .content h2::after {
+    content: "";
+    height: 2px;
+    background: currentColor;
+    flex: 1 1 auto;           /* čára vyplní prostor */
+    max-width: 7rem;          /* délka čáry - uprav dle vkusu */
+    opacity: 0.9;
+  }
+
+  /* 4) Mapa na celou šířku displeje */
+  #two .spotlight .image.place-map {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important; /* vyjede na okraje */
+    margin-right: calc(50% - 50vw) !important;
+    height: 320px !important;
+  }
+
+  #two .spotlight .image.place-map iframe {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+  }
+
+  /* drobnost: ať text pod mapou nezačíná moc nalepeně */
+  #two .spotlight .image.place-map + .content {
+    padding-top: 1.25rem !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #banner p.banner-date {
+    line-height: 1.8em !important;   /* větší řádkování */
+  }
+  #banner p.banner-date span {
+    display: block;                  /* každý na vlastní řádek */
+  }
+  #banner p.banner-date .loc {
+    margin-top: 0.2em;
+  }
+  #banner p.banner-date .msg {
+    margin-top: 0.35em;
+  }
+}

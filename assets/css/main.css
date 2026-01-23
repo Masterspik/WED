@@ -4305,3 +4305,11 @@ Písmo v nadpisech
     margin-top: 0.35em;
   }
 }
+
+#banner p.banner-date {
+  line-height: 3.2em;
+}
+
+#banner p.banner-date span {
+  display: block;          /* pod sebe i na PC */
+}

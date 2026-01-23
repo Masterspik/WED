@@ -4368,17 +4368,31 @@ margin-bottom: auto;
   text-decoration: underline;
 }
 
-/* Mobil – úprava sekce Místo (id="two") */
+/* === Úpravy sekce Místo na mobilu === */
 @media screen and (max-width: 736px) {
 
-  /* 1) Wrapper #two nesmí mít dole vlastní barvu */
-  #two {
-    padding-bottom: 0 !important;
+  /* 1) celý wrapper #two stejná barva jako box Místo,
+        odstranění mezery pod ním */
+  #two.wrapper.alt.style2 {
+    background-color: #5b6259;   /* stejná barva jako box Místo */
+    padding-bottom: 0;
+    margin-bottom: 0;
   }
 
-  /* 2) Zvýšení výšky tmavého boxu "Místo"
-        => víc místa POD textem, aby byl box symetrický */
-  #two .spotlight:first-child .content {
-    padding-bottom: 3.5rem !important;  /* zvyš/spiš uprav podle oka */
+  /* 2) svislé vycentrování obsahu boxu Místo */
+  #two .spotlight.equal-height .content {
+    padding-top: 3rem;      /* horní mezera */
+    padding-bottom: 3rem;   /* spodní mezera – stejná jako horní */
+  }
+
+  /* poslední odstavec bez zbytečné mezery dolů */
+  #two .spotlight.equal-height .content p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* 3) jistota, že další sekce nezačne s mezerou nahoře */
+  #two + .wrapper,
+  #two + section {
+    margin-top: 0;
   }
 }

@@ -4310,7 +4310,17 @@ margin-bottom: auto;
   #banner p.banner-date .msg {
     margin-top: 0.35em;
   }
+    /* 1) Wrapper #two nesmí mít dole vlastní barvu */
+  #two {
+    padding-bottom: 0 !important;
+  }
+   /* 2) Zvýšení výšky tmavého boxu "Místo"
+        => víc místa POD textem, aby byl box symetrický */
+  #two .spotlight:first-child .content {
+    padding-bottom: 3.5rem !important;  /* zvyš/spiš uprav podle oka */
+  }
 }
+
 
 #banner p.banner-date {
   line-height: 3.2em;

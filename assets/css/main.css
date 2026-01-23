@@ -4293,7 +4293,7 @@ Písmo v nadpisech
 
 @media screen and (max-width: 736px) {
   #banner p.banner-date {
-    line-height: 1.8em !important;   /* větší řádkování */
+    line-height: 4em !important;   /* větší řádkování */
   }
   #banner p.banner-date span {
     display: block;                  /* každý na vlastní řádek */
@@ -4313,3 +4313,4 @@ Písmo v nadpisech
 #banner p.banner-date span {
   display: block;          /* pod sebe i na PC */
 }
+

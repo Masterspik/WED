@@ -4388,3 +4388,11 @@ margin-bottom: auto;
     padding-top: 3em;      /* když budeš chtít menší/větší odsazení, uprav jen tohle */
   }
 }
+
+/* === MOBIL: větší řádkování v úvodu pod JAKUB a MARKÉTA === */
+@media screen and (max-width: 736px) {
+  #banner p {
+    line-height: 2.0em;     /* větší rozestupy mezi řádky */
+    margin-bottom: 0.6em;   /* trochu vzduchu mezi jednotlivými odstavci */
+  }
+}

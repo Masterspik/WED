@@ -4104,13 +4104,13 @@ margin-bottom: auto;
 
   #two h2 {
     font-size: 1.2em;
-    margin-bottom: 0.6em;
+    margin-bottom: 0em;
   }
 
   #two p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.1em;
+    margin-bottom: 0em;
   }
 }
 

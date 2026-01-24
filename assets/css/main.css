@@ -4392,3 +4392,34 @@ margin-bottom: auto;
     padding-top: 3em;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+#potvrzeni-ucasti {
+  scroll-margin-top: 0px;
+}
+
+/* =========================
+   MOBIL – odstranění pruhů
+   ========================= */
+@media screen and (max-width: 736px) {
+
+  /* 1. Zrušíme mezery, které ukazují body */
+  .spotlight {
+    margin: 0;
+  }
+
+  /* 2. Odsazení dáme dovnitř sekce */
+  .spotlight .content {
+    padding-top: 3em;
+    padding-bottom: 3em;
+  }
+
+  /* 3. Mapový blok – žádné mezery okolo */
+  .spotlight .image {
+    margin: 0;
+    padding: 0;
+  }
+}

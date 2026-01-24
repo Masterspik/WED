@@ -4213,14 +4213,14 @@ margin-bottom: auto;
   /* Nadpis Místo */
   #two h2 {
     font-size: 1.15em;
-    margin-bottom: 0em;
+    margin-bottom: 0.8em;
   }
 
   /* Texty pod nadpisem */
   #two p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 0em;
+    margin-bottom: 1.2em;
   }
 }
 
@@ -4329,7 +4329,7 @@ margin-bottom: auto;
    /* 2) Zvýšení výšky tmavého boxu "Místo"
         => víc místa POD textem, aby byl box symetrický */
   #two .spotlight:first-child .content {
-    padding-bottom: 3.5rem !important;  /* zvyš/spiš uprav podle oka */
+    padding-bottom: 3rem !important;  /* zvyš/spiš uprav podle oka */
   }
 }
 
@@ -4439,4 +4439,5 @@ html {
     line-height: 1.8;   /* můžeš zkusit 1.7–2.0 podle oka */
   }
 }
+
 

@@ -4213,14 +4213,14 @@ margin-bottom: auto;
   /* Nadpis Místo */
   #two h2 {
     font-size: 1.15em;
-    margin-bottom: 0.8em;
+    margin-bottom: 0em;
   }
 
   /* Texty pod nadpisem */
   #two p {
     font-size: 1rem;
     line-height: 1.6;
-    margin-bottom: 1.2em;
+    margin-bottom: 0em;
   }
 }
 
@@ -4439,3 +4439,4 @@ html {
     line-height: 1.8;   /* můžeš zkusit 1.7–2.0 podle oka */
   }
 }
+

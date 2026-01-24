@@ -4368,31 +4368,23 @@ margin-bottom: auto;
   text-decoration: underline;
 }
 
-/* === Úpravy sekce Místo na mobilu === */
+/* === MOBIL: úprava sekce Místo + odstranění světlého pruhu === */
 @media screen and (max-width: 736px) {
 
-  /* 1) celý wrapper #two stejná barva jako box Místo,
-        odstranění mezery pod ním */
-  #two.wrapper.alt.style2 {
-    background-color: #5b6259;   /* stejná barva jako box Místo */
-    padding-bottom: 0;
-    margin-bottom: 0;
+  /* sekce s Místo (id="two") – žádné extra místo dole */
+  #two {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
-  /* 2) svislé vycentrování obsahu boxu Místo */
-  #two .spotlight.equal-height .content {
-    padding-top: 3rem;      /* horní mezera */
-    padding-bottom: 3rem;   /* spodní mezera – stejná jako horní */
+  /* přechodová sekce s rozmazaným pozadím mezi Místo a Příjezd – skryj na mobilu */
+  #cta {
+    display: none !important;
   }
 
-  /* poslední odstavec bez zbytečné mezery dolů */
-  #two .spotlight.equal-height .content p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* 3) jistota, že další sekce nezačne s mezerou nahoře */
-  #two + .wrapper,
-  #two + section {
-    margin-top: 0;
+  /* první sekce za tím (Příjezd – typicky id="three") bez mezery navíc nahoře */
+  #three {
+    margin-top: 0 !important;
+    padding-top: 3em;      /* když budeš chtít menší/větší odsazení, uprav jen tohle */
   }
 }

@@ -4299,17 +4299,21 @@ margin-bottom: auto;
 
 @media screen and (max-width: 736px) {
   #banner p.banner-date {
-    line-height: 1.8em !important;   /* větší řádkování */
+    line-height: 2.4em !important;   /* větší řádkování */
   }
   #banner p.banner-date span {
-    display: block;                  /* každý na vlastní řádek */
+    display: block;
+    margin-top: 0.2em;                   /* každý na vlastní řádek */
   }
   #banner p.banner-date .loc {
-    margin-top: 0.2em;
+    margin-top: 0.25em;
   }
   #banner p.banner-date .msg {
     margin-top: 0.35em;
   }
+  ``` :contentReference[oaicite:1]{index=1}  
+  
+  
     /* 1) Wrapper #two nesmí mít dole vlastní barvu */
   #two {
     padding-bottom: 0 !important;
@@ -4368,31 +4372,23 @@ margin-bottom: auto;
   text-decoration: underline;
 }
 
-/* === MOBIL: úprava sekce Místo + odstranění světlého pruhu === */
 @media screen and (max-width: 736px) {
-
-  /* sekce s Místo (id="two") – žádné extra místo dole */
+  /* Sekce Místo – žádný pruh nad mapou ani pod ní */
   #two {
+    padding-top: 0 !important;
     padding-bottom: 0 !important;
+    margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
 
-  /* přechodová sekce s rozmazaným pozadím mezi Místo a Příjezd – skryj na mobilu */
+  /* Přechodová rozmazaná sekce úplně schovaná na mobilu */
   #cta {
     display: none !important;
   }
 
-  /* první sekce za tím (Příjezd – typicky id="three") bez mezery navíc nahoře */
+  /* Příjezd */
   #three {
     margin-top: 0 !important;
-    padding-top: 3em;      /* když budeš chtít menší/větší odsazení, uprav jen tohle */
-  }
-}
-
-/* === MOBIL: větší řádkování v úvodu pod JAKUB a MARKÉTA === */
-@media screen and (max-width: 736px) {
-  #banner p {
-    line-height: 2.0em;     /* větší rozestupy mezi řádky */
-    margin-bottom: 0.6em;   /* trochu vzduchu mezi jednotlivými odstavci */
+    padding-top: 3em;
   }
 }

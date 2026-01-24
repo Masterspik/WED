@@ -4111,7 +4111,7 @@ margin-bottom: auto;
 #two .equal-height {
   display: flex;
   align-items: stretch;
-  min-height: 520px; /* ������ uprav podle oka (500–600px) */
+  min-height: 520px; /* 🔧 uprav podle oka (500–600px) */
 }
 
 #two .equal-height .image,
@@ -4235,7 +4235,7 @@ margin-bottom: auto;
 }
 
 .spotlight.equal-height .image.place-map iframe {
-  height: 70%;              /* ������ nastavíš dle oka: 60–80 % */
+  height: 70%;              /* 🔧 nastavíš dle oka: 60–80 % */
   max-height: 420px;        /* aby nebyla přerostlá */
 }
 
@@ -4402,24 +4402,32 @@ html {
 }
 
 /* =========================
-   MOBIL – odstranění pruhů
+   MOBIL – sekce bez světlých pruhů
    ========================= */
 @media screen and (max-width: 736px) {
 
-  /* 1. Zrušíme mezery, které ukazují body */
-  .spotlight {
+  /* Zrušit vertikální mezery mezi všemi sekcemi */
+  section.wrapper,
+  section.spotlight {
     margin: 0;
   }
 
-  /* 2. Odsazení dáme dovnitř sekce */
-  .spotlight .content {
+  /* Odsazení dovnitř sekcí (nahoře + dole) */
+  section.wrapper > .inner,
+  section.spotlight > .inner,
+  section.spotlight .content {
     padding-top: 3em;
     padding-bottom: 3em;
   }
 
-  /* 3. Mapový blok – žádné mezery okolo */
-  .spotlight .image {
+  /* Obrázkové části (mapa, fotky) bez vlastních mezer */
+  section.spotlight .image {
     margin: 0;
     padding: 0;
+  }
+
+  /* Větší rozestupy řádků v úvodním textu */
+  #banner .inner p {
+    line-height: 1.8;   /* můžeš zkusit 1.7–2.0 podle oka */
   }
 }

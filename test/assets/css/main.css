@@ -4438,7 +4438,7 @@ html {
   /* Obrázkové části (mapa, fotky) bez vlastních mezer */
   section.spotlight .image {
     margin: 0;
-    padding: 0;
+    padding: 3em;
   }
 
   /* Větší rozestupy řádků v úvodním textu */
@@ -4452,4 +4452,71 @@ html {
   margin: 0.3em 0 1.2em 0; /* ← DŮLEŽITÉ */
   color: #ffffff;
   text-decoration: underline;
+}
+
+/* Odkaz Samota Hojšín – bez tečkované linky */
+.place-name.place-link {
+  border-bottom: none !important;
+  text-decoration: none;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-trigger img {
+  cursor: zoom-in;
+}
+
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+.custom-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: currentColor;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Bulleted seznam v sekci "Co je na místě" */
+#accommodation,
+#co-je-na-miste { /* použij jedno z ID, podle toho jak sekci pojmenuješ */
+}
+
+#accommodation .accommodation-list,
+#co-je-na-miste .accommodation-list {
+  list-style-type: disc;       /* klasická kulatá tečka */
+  margin: 2rem 0 0 2.5rem;     /* odsazení od ikonky a nadpisu */
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+#accommodation .accommodation-list li,
+#co-je-na-miste .accommodation-list li {
+  margin-bottom: 0.4rem;       /* rozestupy mezi položkami */
 }

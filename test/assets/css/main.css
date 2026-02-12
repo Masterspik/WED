@@ -2327,6 +2327,7 @@ Písmo v nadpisech
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+    
 	}
 
 		ul.icons li {
@@ -4548,4 +4549,8 @@ html {
   letter-spacing: 0.05em;
   line-height: 1.6;
   text-align: center;
+}
+
+.features li:before {
+    color: #3a7145;   /* tvoje petrolejová */
 }

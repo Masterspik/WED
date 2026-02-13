@@ -4554,3 +4554,185 @@ html {
 .features li:before {
     color: #3a7145;   /* tvoje petrolejová */
 }
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.6em;
+}
+
+.custom-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3a7145;   /* tvoje zelená */
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Jednotné mezery mezi odstavci */
+.features li p {
+    margin: 0 0 0.85em 0;
+}
+
+/* Malý offset mezi texty */
+.text-offset {
+    margin-top: 0.6em;
+}
+
+/* jen pro tento seznam */
+.clean-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 0 0;
+}
+
+.clean-bullets li {
+  background: transparent !important;  /* zabije ty šedé čtverce */
+  border: 0 !important;
+  box-shadow: none !important;
+
+  position: relative;
+  padding-left: 1.4em;     /* místo pro tečku */
+  margin: 0 0 0.6em 0;
+  line-height: 1.45;
+}
+
+/* vlastní tečka */
+.clean-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3a7145;          /* tvoje zelená */
+  font-size: 1.1em;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .clean-bullets li {
+    padding-left: 1.2em;
+    margin-bottom: 0.55em;
+  }
+}
+
+#program .clean-bullets li {
+  background: transparent !important;
+  padding: 0 0 0 1.4em !important;
+}
+  
+/* Obrázek mezi sekcemi */
+.image-divider {
+    text-align: center;
+    margin: 4em 0 3em 0;
+}
+
+.image-divider img {
+    max-width: 1000px;   /* uprav dle potřeby */
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Obrázek mezi sekcemi – desktop */
+.image-divider{
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 0 3rem;
+}
+
+.image-divider img{
+  width: min(680px, 85vw);   /* nikdy větší než 680px, jinak 85% šířky okna */
+  height: auto;
+  display: block;
+  border-radius: 10px;      /* můžeš smazat, pokud nechceš */
+}
+
+/* Mobil */
+@media (max-width: 736px){
+  .image-divider{
+    padding: 2.2rem 0 2rem;
+  }
+
+  .image-divider img{
+    width: 92vw;            /* skoro celá šířka, ale s okrajem */
+    border-radius: 8px;
+  }
+}
+
+  #two .spotlight .image-divider.place-map {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important; /* vyjede na okraje */
+    margin-right: calc(50% - 50vw) !important;
+    height: 320px !important;
+  }
+
+  #two .spotlight .image-divider.place-map iframe {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    }
+    
+@media (max-width: 768px) {
+  /* text v boxech na mobilu NEzarovnávat do bloku */
+  .spotlight .content,
+  .box .content,
+  .features .content,
+  .wrapper .content {
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 768px) {
+  /* pokud máš grid */
+  .features,
+  .boxes,
+  .row,
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* pokud máš flex */
+  .features,
+  .boxes,
+  .row {
+    display: flex;
+    flex-direction: column !important;
+    gap: 1.2rem;
+  }
+
+  /* samotné boxy */
+  .features > section,
+  .boxes > section,
+  .row > section,
+  .box {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* box s textem */
+  .box,
+  .features > section,
+  .boxes > section,
+  .spotlight .content {
+    background: rgba(255, 255, 255, 0.55) !important; /* světle odlišné */
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 14px;
+    padding: 18px 16px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+}    

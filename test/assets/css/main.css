@@ -4123,7 +4123,10 @@ margin-bottom: auto;
   min-height: 520px; /* 🔧 uprav podle oka (500–600px) */
 }
 
-#two .equal-height .image,
+#two .equal-height .image {
+  display: flex;
+ }
+
 #two .equal-height .content {
   display: flex;
   flex-direction: column;
@@ -4474,13 +4477,17 @@ html {
 }
 
 .lightbox img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 100%;
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
 }
 
 .lightbox-trigger img {
+  align-items: center;
   cursor: zoom-in;
+  max-width: 65%;
+  max-height: 65%;
+  padding: 1em;
 }
 
 

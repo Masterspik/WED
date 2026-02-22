@@ -4710,18 +4710,5 @@ html {
     height: 100% !important;
     display: block;
     }
-    
-@media (max-width: 768px) {
-  /* text v boxech na mobilu NEzarovnávat do bloku */
-  .spotlight .content,
-  .box .content,
-  .features .content,
-  .wrapper .content {
-    text-align: left !important;
-    word-spacing: normal !important;
-    letter-spacing: normal !important;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    overflow-wrap: anywhere;
-  }
-}    
+     
+

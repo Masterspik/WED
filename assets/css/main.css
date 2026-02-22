@@ -121,9 +121,9 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-	   font-family: 'Playfair Display', serif;
-	   font-size: 20pt;
-	   font-weight: 400;
+	   font-family: 'Montserrat', sans-serif;
+	   font-size: 16pt;
+	   font-weight: 300;
 	   letter-spacing: 0.075em;
 	   line-height: 1.5em;
     }
@@ -187,8 +187,8 @@ Písmo v nadpisech
  
 	h1, h2, h3, h4, h5, h6 {
 		color: #fff;
-		font-family: 'Playfair Display', serif;
-    font-weight: 500;
+		font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
     letter-spacing: 0.04em;
 		line-height: 1em;
 		margin: 0 0 1em 0;
@@ -275,7 +275,7 @@ Písmo v nadpisech
 	code {
 		background: rgba(144, 144, 144, 0.25);
 		border-radius: 3px;
-		font-family: "Courier New", monospace;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 0.9em;
 		letter-spacing: 0;
 		margin: 0 0.25em;
@@ -284,7 +284,7 @@ Písmo v nadpisech
 
 	pre {
 		-webkit-overflow-scrolling: touch;
-		font-family: "Courier New", monospace;
+		font-family: 'Montserrat', sans-serif;
 		font-size: 0.9em;
 		margin: 0 0 2em 0;
 	}
@@ -2327,6 +2327,7 @@ Písmo v nadpisech
 		cursor: default;
 		list-style: none;
 		padding-left: 0;
+    
 	}
 
 		ul.icons li {
@@ -3323,21 +3324,29 @@ Písmo v nadpisech
 
 			}
 
-		@media screen and (max-width: 980px) {
+      @media screen and (max-width: 980px) {
+      
+        .wrapper {
+          padding: 4em 3em 2em 3em;
+        }
+      
+        /* Zruší padding pro wrapper.alt (sekce jako #two s mapou) */
+        .wrapper.alt {
+          padding: 0;
+        }
+      }
 
-			.wrapper {
-				padding: 4em 3em 2em 3em ;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.wrapper {
-				padding: 3em 2em 1em 2em ;
-			}
-
-		}
+    		@media screen and (max-width: 736px) {
+    
+      .wrapper {
+        padding: 3em 2em 1em 2em;
+      }
+    
+      /* I na mobilech wrapper.alt bez paddingu – jinak se objevují světlé pruhy */
+      .wrapper.alt {
+        padding: 0;
+      }
+    }
 
 /* Page Wrapper + Menu */
 
@@ -4114,7 +4123,10 @@ margin-bottom: auto;
   min-height: 520px; /* 🔧 uprav podle oka (500–600px) */
 }
 
-#two .equal-height .image,
+#two .equal-height .image {
+  display: flex;
+ }
+
 #two .equal-height .content {
   display: flex;
   flex-direction: column;
@@ -4338,6 +4350,7 @@ margin-bottom: auto;
   text-align: justify;
   text-justify: inter-word;
   line-height: 1.6;
+  letter-spacing: 0;
 }
 
 /* === Equal-height spotlight – vertikální centrování obsahu === */
@@ -4389,7 +4402,14 @@ margin-bottom: auto;
   /* Příjezd */
   #three {
     margin-top: 0 !important;
-    padding-top: 3em;
+    padding-top: 0em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  /* Větší výška boxu „Přibližný program“, aby překryl pruh pod sebou */
+  #two .spotlight.equal-height:last-of-type .content {
+    padding-bottom: 3rem;
   }
 }
 
@@ -4402,24 +4422,269 @@ html {
 }
 
 /* =========================
-   MOBIL – odstranění pruhů
+   MOBIL – sekce bez světlých pruhů
    ========================= */
 @media screen and (max-width: 736px) {
 
-  /* 1. Zrušíme mezery, které ukazují body */
-  .spotlight {
+  /* Zrušit vertikální mezery mezi všemi sekcemi */
+  section.wrapper,
+  section.spotlight {
     margin: 0;
   }
 
-  /* 2. Odsazení dáme dovnitř sekce */
-  .spotlight .content {
+  /* Odsazení dovnitř sekcí (nahoře + dole) */
+  section.wrapper > .inner,
+  section.spotlight > .inner,
+  section.spotlight .content {
     padding-top: 3em;
     padding-bottom: 3em;
   }
 
-  /* 3. Mapový blok – žádné mezery okolo */
-  .spotlight .image {
+  /* Obrázkové části (mapa, fotky) bez vlastních mezer */
+  section.spotlight .image {
     margin: 0;
-    padding: 0;
+    padding: 3em;
+  }
+
+  /* Větší rozestupy řádků v úvodním textu */
+  #banner .inner p {
+    line-height: 1.8;   /* můžeš zkusit 1.7–2.0 podle oka */
   }
 }
+
+.place-link {
+  display: block;
+  margin: 0.3em 0 1.2em 0; /* ← DŮLEŽITÉ */
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Odkaz Samota Hojšín – bez tečkované linky */
+.place-name.place-link {
+  border-bottom: none !important;
+  text-decoration: none;
+}
+
+/* ===== LIGHTBOX ===== */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightbox-trigger img {
+  align-items: center;
+  cursor: zoom-in;
+  max-width: 100%;
+  max-height: 100%;
+  padding: 1em;
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 0.6em;
+}
+
+.custom-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: currentColor;
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* Bulleted seznam v sekci "Co je na místě" */
+#accommodation,
+#co-je-na-miste { /* použij jedno z ID, podle toho jak sekci pojmenuješ */
+}
+
+#accommodation .accommodation-list,
+#co-je-na-miste .accommodation-list {
+  list-style-type: disc;       /* klasická kulatá tečka */
+  margin: 2rem 0 0 2.5rem;     /* odsazení od ikonky a nadpisu */
+  padding: 0;
+  font-size: 1.4rem;
+  line-height: 1.6;
+}
+
+#accommodation .accommodation-list li,
+#co-je-na-miste .accommodation-list li {
+  margin-bottom: 0.4rem;       /* rozestupy mezi položkami */
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;   /* ← TADY nastavíš mezeru mezi obdélníky */
+  background: transparent;
+}
+
+.features li {
+  width: calc(50% - 0.75rem); /* polovina mínus půlka gapu */
+}
+
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;              /* Light */
+  text-transform: uppercase;     /* VELKÁ PÍSMENA */
+  letter-spacing: 0.18em;        /* hodně vzduchu */
+  text-align: center;
+}
+
+
+.section-text {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.features li:before {
+    color: #3a7145;   /* tvoje petrolejová */
+}
+
+.custom-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.custom-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.6em;
+}
+
+.custom-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #3a7145;   /* tvoje zelená */
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+/* Jednotné mezery mezi odstavci */
+.features li p {
+    margin: 0 0 0.85em 0;
+}
+
+/* Malý offset mezi texty */
+.text-offset {
+    margin-top: 0.6em;
+}
+
+/* jen pro tento seznam */
+.clean-bullets {
+  list-style: none;
+  padding-left: 0;
+  margin: 1rem 0 0 0;
+}
+
+.clean-bullets li {
+  background: transparent !important;  /* zabije ty šedé čtverce */
+  border: 0 !important;
+  box-shadow: none !important;
+
+  position: relative;
+  padding-left: 1.4em;     /* místo pro tečku */
+  margin: 0 0 0.6em 0;
+  line-height: 1.45;
+}
+
+/* vlastní tečka */
+.clean-bullets li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #3a7145;          /* tvoje zelená */
+  font-size: 1.1em;
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .clean-bullets li {
+    padding-left: 1.2em;
+    margin-bottom: 0.55em;
+  }
+}
+
+#program .clean-bullets li {
+  background: transparent !important;
+  padding: 0 0 0 1.4em !important;
+}
+  
+/* Obrázek mezi sekcemi */
+.image-divider {
+    text-align: center;
+    margin: 4em 0 3em 0;
+}
+
+.image-divider img {
+    max-width: 1000px;   /* uprav dle potřeby */
+    width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* Obrázek mezi sekcemi – desktop */
+.image-divider{
+  display: flex;
+  justify-content: center;
+  padding: 3.5rem 0 3rem;
+}
+
+.image-divider img{
+  width: min(680px, 85vw);   /* nikdy větší než 680px, jinak 85% šířky okna */
+  height: auto;
+  display: block;
+  border-radius: 10px;      /* můžeš smazat, pokud nechceš */
+}
+
+/* Mobil */
+@media (max-width: 736px){
+  .image-divider{
+    padding: 2.2rem 0 2rem;
+  }
+
+  .image-divider img{
+    width: 92vw;            /* skoro celá šířka, ale s okrajem */
+    border-radius: 8px;
+  }
+}
+
+  #two .spotlight .image-divider.place-map {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin-left: calc(50% - 50vw) !important; /* vyjede na okraje */
+    margin-right: calc(50% - 50vw) !important;
+    height: 320px !important;
+  }
+
+  #two .spotlight .image-divider.place-map iframe {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    }
+    
+  
